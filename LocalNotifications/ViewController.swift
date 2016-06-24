@@ -28,7 +28,19 @@ class ViewController: UIViewController {
         localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    
+    
+    let notification = UILocalNotification()
+    notification.fireDate = NSDate(timeIntervalSinceNow: 5)
+    notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+    notification.alertAction = "be awesome!"
+    notification.soundName = UILocalNotificationDefaultSoundName
+    notification.userInfo = ["CustomField1": "w00t"]
+    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    
     }
+    
+    
 
 
 }
